@@ -76,6 +76,16 @@ npm install
 ng serve
 Tarayıcınızdan http://localhost:4200 adresini açarak uygulamayı kullanabilirsiniz.
 
+## 📡 API Endpoint Listesi
+
+| Metot | Endpoint | Açıklama |
+| :--- | :--- | :--- |
+| **GET** | `/api/todo` | Kayıtlı tüm görevleri listeler |
+| **GET** | `/api/todo/{id}` | Belirtilen ID'ye sahip görevi getirir |
+| **POST** | `/api/todo` | Yeni bir görev oluşturur |
+| **PUT** | `/api/todo/{id}` | Mevcut bir görevin detaylarını/durumunu günceller |
+| **DELETE** | `/api/todo/{id}` | Belirtilen ID'deki görevi siler |
+
 Örnek İstek Gövdesi (POST /api/todo)
 JSON
 {
