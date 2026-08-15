@@ -1,0 +1,25 @@
+<mat-toolbar color="primary" class="header-toolbar">
+  <div class="logo-section" (click)="goHome()">
+    <mat-icon>check_box</mat-icon>
+    <span class="app-title">TaskMaster To-Do</span>
+  </div>
+
+  <span class="spacer"></span>
+
+  <div class="user-section" *ngIf="userProfile">
+    <button mat-button class="profile-btn" (click)="openProfile()">
+      <img *ngIf="userProfile.profilePicture; else defaultAvatar"
+           [src]="userProfile.profilePicture"
+           alt="Avatar"
+           class="avatar" />
+      <ng-template #defaultAvatar>
+        <mat-icon class="avatar-icon">account_circle</mat-icon>
+      </ng-template>
+      <span class="username">{{ userProfile.username }}</span>
+    </button>
+
+    <button mat-icon-button (click)="logout()" title="Çıkış Yap">
+      <mat-icon>logout</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>

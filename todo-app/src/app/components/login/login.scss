@@ -1,0 +1,107 @@
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #0d0f17;
+}
+
+
+mat-card, .login-card {
+  background-color: #161926 !important;
+  border-radius: 20px !important;
+  border: 1px solid rgba(139, 92, 246, 0.25) !important;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6), 0 0 25px rgba(124, 58, 237, 0.12) !important;
+  padding: 36px 32px !important;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+
+.logo-icon, mat-icon.app-logo {
+  background: linear-gradient(135deg, #7c3aed 0%, #6366f1 100%);
+  color: #ffffff !important;
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
+}
+
+h1, h2, .title, .app-title {
+  color: #ffffff !important;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+h3, .subtitle {
+  color: #a78bfa !important;
+  font-weight: 500;
+}
+
+
+.mat-mdc-form-field {
+  width: 100%;
+  margin-bottom: 12px;
+
+
+  .mat-mdc-text-field-wrapper {
+    background-color: #0f121d !important;
+    border-radius: 10px !important;
+  }
+
+
+  input {
+    color: #ffffff !important;
+  }
+
+ 
+  .mat-mdc-floating-label {
+    color: #94a3b8 !important;
+  }
+
+  
+  &.mat-focused .mat-mdc-notch-piece {
+    border-color: #8b5cf6 !important;
+  }
+}
+
+
+button[type="submit"],
+button[mat-raised-button],
+.login-btn {
+  background: linear-gradient(135deg, #7c3aed 0%, #6366f1 100%) !important;
+  color: #ffffff !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  border-radius: 10px !important;
+  padding: 12px !important;
+  width: 100%;
+  margin-top: 10px;
+  box-shadow: 0 4px 18px rgba(124, 58, 237, 0.4) !important;
+  transition: all 0.2s ease-in-out !important;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 22px rgba(124, 58, 237, 0.6) !important;
+  }
+}
+
+
+.footer-text, p {
+  color: #94a3b8 !important;
+  text-align: center;
+  margin-top: 20px;
+
+  a {
+    color: #a78bfa !important;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #c084fc !important;
+      text-decoration: underline;
+    }
+  }
+}

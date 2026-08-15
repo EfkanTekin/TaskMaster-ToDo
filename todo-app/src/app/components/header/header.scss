@@ -1,0 +1,101 @@
+.header-toolbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+
+  .app-title {
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  .profile-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .avatar-icon {
+      font-size: 32px;
+      width: 32px;
+      height: 32px;
+    }
+
+    .username {
+      font-weight: 500;
+    }
+  }
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.profile-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  height: 40px !important;
+  padding: 0 12px !important;
+
+  ::ng-deep .mdc-button__label {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 10px !important;
+    white-space: nowrap !important;
+  }
+
+  .avatar {
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    flex-shrink: 0 !important;
+    display: block !important;
+    border: 1.5px solid #8b5cf6;
+  }
+
+  .avatar-icon {
+    font-size: 28px !important;
+    width: 28px !important;
+    height: 28px !important;
+    color: #c084fc !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+  }
+
+  .username {
+    color: #ffffff !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    line-height: 1 !important;
+    margin: 0 !important;
+    display: inline-block !important;
+  }
+}

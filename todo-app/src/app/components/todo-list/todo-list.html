@@ -1,0 +1,72 @@
+<app-header></app-header>
+
+<div class="todo-container">
+  <mat-card class="todo-card">
+    <div class="action-bar">
+      <mat-form-field appearance="outline" class="search-field">
+        <mat-label>Görevlerde Ara...</mat-label>
+        <input matInput [(ngModel)]="searchTerm" (keyup)="filterTodos()" />
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" (click)="openAddDialog()">
+        <mat-icon>add</mat-icon> Yeni Görev Ekle
+      </button>
+    </div>
+
+    <table mat-table [dataSource]="dataSource" class="full-width-table">
+      <ng-container matColumnDef="isCompleted">
+        <th mat-header-cell *matHeaderCellDef> Tamamlandı </th>
+        <td mat-cell *matCellDef="let element">
+          <mat-checkbox [checked]="element.isCompleted" (change)="toggleComplete(element)"></mat-checkbox>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef> Başlık </th>
+        <td mat-cell *matCellDef="let element" [class.completed-text]="element.isCompleted">
+          {{ element.title }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef> Açıklama </th>
+        <td mat-cell *matCellDef="let element" [class.completed-text]="element.isCompleted">
+          {{ element.description || '-' }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="createdAt">
+        <th mat-header-cell *matHeaderCellDef> Tarih </th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.createdAt | date:'dd.MM.yyyy HH:mm' }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> İşlemler </th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button color="primary" (click)="openEditDialog(element)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="deleteTodo(element.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+  <mat-paginator 
+  [pageSize]="5" 
+  [pageSizeOptions]="[5, 10, 20]" 
+  showFirstLastButtons>
+  </mat-paginator>
+
+  <div *ngIf="dataSource.data.length === 0" class="empty-state">
+      <p>Henüz kayıtlı bir görev bulunmuyor.</p>
+    </div>
+  </mat-card>
+</div>
